@@ -5,6 +5,7 @@ Usage Example:
 ```hcl
   module "otc_keycloak_sso_oidc" {
   source               = "iits-consulting/keycloak_sso_oidc/opentelekomcloud"
+
   keycloak_realm       = "my_keycloak_realm"
   keycloak_domain_name = "https://auth.mydomain.de"
   otc_idp_name         = "my_project_keycloak_SSO-oidc"
@@ -57,19 +58,24 @@ Notes:
 ```
 
 <!-- BEGIN_TF_DOCS -->
-
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.7 |
+| <a name="requirement_curl"></a> [curl](#requirement\_curl) | ~> 1.0 |
+| <a name="requirement_errorcheck"></a> [errorcheck](#requirement\_errorcheck) | 3.0.3 |
+| <a name="requirement_keycloak"></a> [keycloak](#requirement\_keycloak) | ~> 4.4 |
+| <a name="requirement_opentelekomcloud"></a> [opentelekomcloud](#requirement\_opentelekomcloud) | ~> 1.32 |
 
 ## Providers
 
-| Name                                                                                    | Version |
-| --------------------------------------------------------------------------------------- | ------- |
-| <a name="provider_curl"></a> [curl](#provider_curl)                                     | n/a     |
-| <a name="provider_errorcheck"></a> [errorcheck](#provider_errorcheck)                   | n/a     |
-| <a name="provider_keycloak"></a> [keycloak](#provider_keycloak)                         | n/a     |
-| <a name="provider_opentelekomcloud"></a> [opentelekomcloud](#provider_opentelekomcloud) | n/a     |
+| Name | Version |
+|------|---------|
+| <a name="provider_curl"></a> [curl](#provider\_curl) | ~> 1.0 |
+| <a name="provider_errorcheck"></a> [errorcheck](#provider\_errorcheck) | 3.0.3 |
+| <a name="provider_keycloak"></a> [keycloak](#provider\_keycloak) | ~> 4.4 |
+| <a name="provider_opentelekomcloud"></a> [opentelekomcloud](#provider\_opentelekomcloud) | ~> 1.32 |
 
 ## Modules
 
@@ -77,30 +83,29 @@ No modules.
 
 ## Resources
 
-| Name                                                                                                                                                                      | Type        |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| [errorcheck_is_valid.cert_endpoint_check](https://registry.terraform.io/providers/iits-consulting/errorcheck/latest/docs/resources/is_valid)                              | resource    |
-| [keycloak_openid_client.otc](https://registry.terraform.io/providers/mrparkers/keycloak/latest/docs/resources/openid_client)                                              | resource    |
-| [keycloak_openid_client_default_scopes.otc_default_scopes](https://registry.terraform.io/providers/mrparkers/keycloak/latest/docs/resources/openid_client_default_scopes) | resource    |
-| [opentelekomcloud_identity_provider.provider](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/resources/identity_provider)          | resource    |
-| [curl_curl.oidc_keys](https://registry.terraform.io/providers/anschoewe/curl/latest/docs/data-sources/curl)                                                               | data source |
-| [opentelekomcloud_identity_project_v3.current](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/data-sources/identity_project_v3)    | data source |
+| Name | Type |
+|------|------|
+| [errorcheck_is_valid.cert_endpoint_check](https://registry.terraform.io/providers/iits-consulting/errorcheck/3.0.3/docs/resources/is_valid) | resource |
+| [keycloak_openid_client.otc](https://registry.terraform.io/providers/mrparkers/keycloak/latest/docs/resources/openid_client) | resource |
+| [keycloak_openid_client_default_scopes.otc_default_scopes](https://registry.terraform.io/providers/mrparkers/keycloak/latest/docs/resources/openid_client_default_scopes) | resource |
+| [opentelekomcloud_identity_provider.provider](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/resources/identity_provider) | resource |
+| [curl_curl.oidc_keys](https://registry.terraform.io/providers/anschoewe/curl/latest/docs/data-sources/curl) | data source |
+| [opentelekomcloud_identity_project_v3.current](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/data-sources/identity_project_v3) | data source |
 
 ## Inputs
 
-| Name                                                                                          | Description                                                                     | Type     | Default                    | Required |
-| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | -------- | -------------------------- | :------: |
-| <a name="input_keycloak_domain_name"></a> [keycloak_domain_name](#input_keycloak_domain_name) | The domain name for the keycloak instance.                                      | `string` | n/a                        |   yes    |
-| <a name="input_keycloak_realm"></a> [keycloak_realm](#input_keycloak_realm)                   | Keycloak realm to create SAML client.                                           | `string` | n/a                        |   yes    |
-| <a name="input_otc_idp_name"></a> [otc_idp_name](#input_otc_idp_name)                         | Name of the identity provider resources in Open Telekom Cloud.                  | `string` | n/a                        |   yes    |
-| <a name="input_otc_idp_rules"></a> [otc_idp_rules](#input_otc_idp_rules)                      | n/a                                                                             | `string` | n/a                        |   yes    |
-| <a name="input_keycloak_client_name"></a> [keycloak_client_name](#input_keycloak_client_name) | Keycloak Client name for the Open Telekom Cloud IDP client. (Default: otc-login | `string` | `"otc-login"`              |    no    |
-| <a name="input_otc_auth_endpoint"></a> [otc_auth_endpoint](#input_otc_auth_endpoint)          | Authentication endpoint for Open Telekom Cloud. Default: auth.otc.t-systems.com | `string` | `"auth.otc.t-systems.com"` |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_keycloak_domain_name"></a> [keycloak\_domain\_name](#input\_keycloak\_domain\_name) | The domain name for the keycloak instance. | `string` | n/a | yes |
+| <a name="input_keycloak_realm"></a> [keycloak\_realm](#input\_keycloak\_realm) | Keycloak realm to create SAML client. | `string` | n/a | yes |
+| <a name="input_otc_idp_name"></a> [otc\_idp\_name](#input\_otc\_idp\_name) | Name of the identity provider resources in Open Telekom Cloud. | `string` | n/a | yes |
+| <a name="input_otc_idp_rules"></a> [otc\_idp\_rules](#input\_otc\_idp\_rules) | n/a | `string` | n/a | yes |
+| <a name="input_keycloak_client_name"></a> [keycloak\_client\_name](#input\_keycloak\_client\_name) | Keycloak Client name for the Open Telekom Cloud IDP client. (Default: otc-login | `string` | `"otc-login"` | no |
+| <a name="input_otc_auth_endpoint"></a> [otc\_auth\_endpoint](#input\_otc\_auth\_endpoint) | Authentication endpoint for Open Telekom Cloud. Default: auth.otc.t-systems.com | `string` | `"auth.otc.t-systems.com"` | no |
 
 ## Outputs
 
-| Name                                                                 | Description |
-| -------------------------------------------------------------------- | ----------- |
-| <a name="output_otc_sso_url"></a> [otc_sso_url](#output_otc_sso_url) | n/a         |
-
+| Name | Description |
+|------|-------------|
+| <a name="output_otc_sso_url"></a> [otc\_sso\_url](#output\_otc\_sso\_url) | n/a |
 <!-- END_TF_DOCS -->
