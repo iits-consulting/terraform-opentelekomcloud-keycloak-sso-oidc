@@ -4,8 +4,8 @@ terraform {
 
   required_providers {
     keycloak = {
-      source  = "mrparkers/keycloak"
-      version = "~> 4.4"
+      source  = "keycloak/keycloak"
+      version = "~> 5.4"
     }
     opentelekomcloud = {
       source  = "opentelekomcloud/opentelekomcloud"
