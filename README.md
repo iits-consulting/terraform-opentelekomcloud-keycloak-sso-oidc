@@ -65,7 +65,7 @@ Notes:
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.7 |
 | <a name="requirement_curl"></a> [curl](#requirement\_curl) | ~> 1.0 |
 | <a name="requirement_errorcheck"></a> [errorcheck](#requirement\_errorcheck) | 3.0.3 |
-| <a name="requirement_keycloak"></a> [keycloak](#requirement\_keycloak) | ~> 4.4 |
+| <a name="requirement_keycloak"></a> [keycloak](#requirement\_keycloak) | ~> 5.4 |
 | <a name="requirement_opentelekomcloud"></a> [opentelekomcloud](#requirement\_opentelekomcloud) | ~> 1.32 |
 
 ## Providers
@@ -74,7 +74,7 @@ Notes:
 |------|---------|
 | <a name="provider_curl"></a> [curl](#provider\_curl) | ~> 1.0 |
 | <a name="provider_errorcheck"></a> [errorcheck](#provider\_errorcheck) | 3.0.3 |
-| <a name="provider_keycloak"></a> [keycloak](#provider\_keycloak) | ~> 4.4 |
+| <a name="provider_keycloak"></a> [keycloak](#provider\_keycloak) | ~> 5.4 |
 | <a name="provider_opentelekomcloud"></a> [opentelekomcloud](#provider\_opentelekomcloud) | ~> 1.32 |
 
 ## Modules
@@ -86,8 +86,8 @@ No modules.
 | Name | Type |
 |------|------|
 | [errorcheck_is_valid.cert_endpoint_check](https://registry.terraform.io/providers/iits-consulting/errorcheck/3.0.3/docs/resources/is_valid) | resource |
-| [keycloak_openid_client.otc](https://registry.terraform.io/providers/mrparkers/keycloak/latest/docs/resources/openid_client) | resource |
-| [keycloak_openid_client_default_scopes.otc_default_scopes](https://registry.terraform.io/providers/mrparkers/keycloak/latest/docs/resources/openid_client_default_scopes) | resource |
+| [keycloak_openid_client.otc](https://registry.terraform.io/providers/keycloak/keycloak/latest/docs/resources/openid_client) | resource |
+| [keycloak_openid_client_default_scopes.otc_default_scopes](https://registry.terraform.io/providers/keycloak/keycloak/latest/docs/resources/openid_client_default_scopes) | resource |
 | [opentelekomcloud_identity_provider.provider](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/resources/identity_provider) | resource |
 | [curl_curl.oidc_keys](https://registry.terraform.io/providers/anschoewe/curl/latest/docs/data-sources/curl) | data source |
 | [opentelekomcloud_identity_project_v3.current](https://registry.terraform.io/providers/opentelekomcloud/opentelekomcloud/latest/docs/data-sources/identity_project_v3) | data source |
